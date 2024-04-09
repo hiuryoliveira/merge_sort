@@ -58,3 +58,17 @@ mod sortable {
         }
     }
 }
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_merge_sort() {
+        let mut sortable = vec![12, 11, 13, 5, 19, 189, 38, 18, 37, 60, 90, 6, 7];
+        let length = sortable.len();
+        sortable::merge_sort(&mut sortable, 0, length - 1);
+        assert_eq!(sortable, vec![5, 6, 7, 11, 12, 13, 18, 19, 37, 38, 60, 90, 189]);
+    }
+}
